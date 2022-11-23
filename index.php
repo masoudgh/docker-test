@@ -7,5 +7,5 @@ $allKeys = $redis->keys('*');
 $redis->set("key-".count($allKeys), date("H:i:s"));
 
 foreach($allKeys as $key){
-  echo $redis->get($key);
+  echo "$key = " . $redis->get($key) . "\n";
 }
